@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles.css" />
+    <title>Online Order</title>
+  </head>
+  <body>
+    <div class="header">
+      <header>
+        <div class="navboxpic">
+          <img
+            src="../Images/Pops diner.jpeg"
+            alt="pic"
+            height="100px"
+            width="150px"
+            id="pic"
+          />
+        </div>
+
+        <div class="navboxtitle">
+          <h1>Pop's Diner</h1>
+        </div>
+
+        <div class="navboxbuttons">
+          <nav>
+            <div class="navbuttons">
+              <a href="../index.html">Home</a>
+            </div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div class="navbuttons">
+              <a href="./menu.html">Our Menu</a>
+            </div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div class="navbuttons">
+              <a href="./order.html">Order Online</a>
+            </div>
+          </nav>
+        </div>
+      </header>
+    </div>
+
+    <main>
+      <section class="sectionbox">
+        <div class="titlebox">
+          <h2 id="welcome-Msg">
+            Welcome to Pop's Diner! <br />Please enter your info and order below
+          </h2>
+        </div>
+        <div class="infobox">
+          <form action="./confirmation.html" method="get" id="submit">
+            <div>
+              <label for="name">Name: </label>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input
+                type="text"
+                name="name"
+                id="name"
+                autofocus
+                autocomplete="given-name"
+                maxlength="30"
+                tabindex="1"
+              />
+            </div>
+            <br />
+            <div>
+              <label for="address">Address: </label>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+              <input
+                type="address"
+                name="address"
+                id="address"
+                autocomplete="address"
+                maxlength="30"
+                tabindex="2"
+              />
+            </div>
+            <br />
+            <div>
+              <label for="PhoneNumber">Phone Number:</label>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <input
+                type="Number"
+                id="Phone Number"
+                name="Phone Number"
+                tabindex="3"
+                list="list"
+              />
+
+              <!--<datalist id="list">
+                  <option value="IT Technician"></option>
+                  <option value="HR Manager"></option>
+                  <option value="Accounts"></option>
+                  <option value="Front Desk"></option>
+                </datalist>-->
+            </div>
+            <br />
+            <div>
+              <label for="CardNum">Card Number: </label>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input
+                type="Number"
+                name="Card Number"
+                id="Card Number"
+                autocomplete="Card Number"
+                tabindex="4"
+              />
+            </div>
+            <br />
+            <div>
+              <label for="date">Expire Date: </label>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="date" name="date" id="date" tabindex="5" />
+            </div>
+            <br />
+            <div>
+              <label for="CVV">CVV: </label>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input
+                type="Number"
+                name="CVV"
+                id="CVV"
+                autocomplete="CVV"
+                tabindex="6"
+              />
+            </div>
+            <br /><br /><br /><br />
+            <div>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="submit" value="Submit" />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="reset" value="Clear" />
+            </div>
+          </form>
+        </div>
+
+        <div class="orderbox">
+          <form action="/data" method="get" class="">
+            <div class="orderbluebox">
+              &nbsp;
+              <input type="checkbox" />
+
+              <label for="Club">Club Sandwich</label>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input
+                type="Number"
+                name="Quantity"
+                id="Quantity"
+                autocomplete="Quantity"
+                tabindex="7"
+              />
+              &nbsp;
+              <label for="Quantity">Quantity</label>
+            </div>
+          </form>
+          <form action="./confirmation.html" method="get" class="">
+            <div class="orderbluebox">
+              &nbsp;
+              <input type="checkbox" />
+
+              <label for="Poutine">Poutine</label>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input
+                type="Number"
+                name="Quantity"
+                id="Quantity"
+                autocomplete="Quantity"
+                tabindex="7"
+              />
+              &nbsp;
+              <label for="Quantity">Quantity</label>
+            </div>
+          </form>
+          <form action="/data" method="get" class="">
+            <div class="orderbluebox">
+              &nbsp;
+              <input type="checkbox" />
+
+              <label for="Burger">Pop's Burger</label>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input
+                type="Number"
+                name="Quantity"
+                id="Quantity"
+                autocomplete="Quantity"
+                tabindex="7"
+              />
+              &nbsp;
+              <label for="Quantity">Quantity</label>
+            </div>
+          </form>
+          <form action="/data" method="get" class="">
+            <div class="orderbluebox">
+              &nbsp;
+              <input type="checkbox" />
+
+              <label for="Chicken B">Chicken Burger</label>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input
+                type="Number"
+                name="Quantity"
+                id="Quantity"
+                autocomplete="Quantity"
+                tabindex="7"
+              />
+              &nbsp;
+              <label for="Quantity">Quantity</label>
+            </div>
+          </form>
+          <form action="/data" method="get" class="">
+            <div class="orderbluebox">
+              &nbsp;
+              <input type="checkbox" />
+
+              <label for="Fingers">Chicken Fingers</label>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input
+                type="Number"
+                name="Quantity"
+                id="Quantity"
+                autocomplete="Quantity"
+                tabindex="7"
+              />
+              &nbsp;
+              <label for="Quantity">Quantity</label>
+            </div>
+          </form>
+          <form action="/data" method="get" class="">
+            <div class="orderbluebox">
+              &nbsp;
+              <input type="checkbox" />
+
+              <label for="HBS">Hot Beef Sandwich</label>
+
+              <input
+                type="Number"
+                name="Quantity"
+                id="Quantity"
+                autocomplete="Quantity"
+                tabindex="7"
+              />
+              &nbsp;
+              <label for="Quantity">Quantity</label>
+            </div>
+          </form>
+          <form action="/data" method="get" class="">
+            <div class="orderbluebox">
+              &nbsp;
+              <input type="checkbox" />
+
+              <label for="Fish">Fish n' Chips</label>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input
+                type="Number"
+                name="Quantity"
+                id="Quantity"
+                autocomplete="Quantity"
+                tabindex="7"
+              />
+              &nbsp;
+              <label for="Quantity">Quantity</label>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <script src="../Scripts/script.js"></script>
+    <script src="../Scripts/submit.js"></script>
+    <script src="../Scripts/welcome.js"></script>
+  </body>
+</html>

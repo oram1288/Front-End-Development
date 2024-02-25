@@ -1,0 +1,88 @@
+body {
+  color: black;
+  margin-left: 100px;
+  margin-right: 100px;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(0, 166, 255),
+    rgb(35, 42, 141)
+  );
+}
+
+.main {
+  width: 1000px;
+  background-color: white;
+  border: 4px solid black;
+  padding: 15px;
+  margin: 20px;
+  text-align: left;
+}
+
+h1 {
+  font-size: 30pt;
+  color: black;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-decoration: underline;
+}
+
+header {
+  text-align: center;
+}
+
+nav {
+  text-align: center;
+}
+
+main {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+footer {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+section {
+  text-align: center;
+}
+
+h2 {
+  font-size: 14;
+  color: black;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12pt;
+  color: black;
+}
+
+q {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12pt;
+  color: black;
+}
+
+nav a:link {
+  color: blue;
+  text-decoration: underline;
+}
+
+a:link {
+  color: rgb(0, 166, 255);
+  text-decoration: underline;
+}
+
+a:visited {
+  color: rgb(35, 42, 141);
+  text-decoration: none;
+  font-size: 20pt;
+}
+
+a:hover {
+  background-color: rgb(166, 208, 232);
+  color: blue;
+  text-decoration: underline;
+}

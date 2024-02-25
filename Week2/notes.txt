@@ -1,0 +1,34 @@
+CSS: Cascading Style Sheet..
+
+Rules:
+
+1. Selector
+2. the declarations
+
+Types of Selectors:
+1. Tag/Type selector... (h1{ } will be used for <h1>)
+2. Class selector.. (we define a class with a period .demo { }) (class = "demo")
+3. ID selectors... ( #box{}  ONLY one element can use it.. as id should be unique for each element)
+4. Contextual selectors: (some element within other element) (ex. div h1{}, for any h1 inside of a div)
+5.Grouping selectors (ex. h1,h2,h3{})
+
+<span></span>... used to select a certain word to change its style
+
+WHERE TO PUT CSS:
+1. Inline css (Style within the element decalartion..)
+    (Inline always over writes internal)
+2. Internal CSS When we define style in the head..
+    (Internal always over writes external)
+3. External CSS   ** mainly used
+
+Google Fonts for different font styles!!
+("link" for html page and "import" for css)
+(then copy the family name and put in into a <p> or <h1> etc.)
+
+UNITS IN CSS:
+1. em (2 times the size of the current font, ex. font-size: 2em)
+2. rem
+3. px
+4. PUT
+5. vw
+6. vh

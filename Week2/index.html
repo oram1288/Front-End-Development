@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>September 20</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fuggles&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--<style>
+      h2 {
+        color: red;
+      }
+    </style>
+    internal styling ^ -->
+  </head>
+  <body>
+    <div>
+      <h1>This is a test div</h1>
+      <p>I am a pargraph inside div</p>
+    </div>
+
+    <h1 id="top">Some more HTML!</h1>
+    <h2 class="top">Linking in HTML - Anchor</h2>
+    <h3>External Linking</h3>
+    <a href="https://www.google.com">Google</a> <br />
+    <a href="https://www.twitter.com">Twitter</a> <br />
+    <a href="./history.html">History</a>
+
+    <h3>Internal Linking</h3>
+    <!--linking things inside your own website, liking bringing you to images or to the top of the screen-->
+    <a href="#img1">Check my images</a>
+    <p style="background-color: blue; color: white">
+      <!--  inline styling ^ -->
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, illum
+      atque quidem perspiciatis officia cum? Eos exercitationem minima labore
+      maxime atque quod mollitia aperiam, veniam quaerat beatae asperiores
+      tempore, aliquid sint ea quas, consequatur fuga doloremque non molestiae
+      facilis nesciunt eum praesentium! Voluptate adipisci quod assumenda iusto
+      excepturi! Qui, aut explicabo? Maiores numquam illum obcaecati perferendis
+      tenetur, fuga in sed blanditiis consectetur ab repudiandae dolor id
+      dolorum illo consequuntur, dolore beatae est dolorem quaerat.
+      Exercitationem laboriosam libero doloribus animi ea, dolor neque,
+      quibusdam consequatur impedit tenetur, beatae sint reprehenderit. Nam,
+      cumque quod. Alias labore quisquam quis esse similique suscipit quidem,
+      error veniam unde odit molestiae, animi autem quo adipisci. Minima
+      molestias iure commodi ullam sit ipsum vitae. Aspernatur minus quas modi
+      dignissimos iure! Aliquam asperiores rem odio et ex dolor? Ullam ab
+      voluptas aliquam voluptatum asperiores nobis doloribus natus nesciunt
+      vero, vitae, pariatur consequatur in.
+    </p>
+
+    <h3 id="img1">Images</h3>
+    <a href="#top">[top]</a>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis sequi,
+      cupiditate nulla voluptates eos numquam recusandae tempora maxime? Amet in
+      expedita numquam qui error! Mollitia rem earum atque alias fugit corporis
+      sequi, placeat vel sed voluptas facilis dolorem optio suscipit dolores, et
+      dicta impedit aliquam totam doloribus! Suscipit, ea molestias? Hic cum
+      odit, adipisci esse fuga a facilis deleniti architecto error nostrum? Quam
+      accusantium nihil officia, non ea dolores repellendus est adipisci eius
+      odit omnis odio. Minima eius animi esse vero eveniet quisquam nostrum,
+      natus fugit labore ex debitis sed quos recusandae temporibus asperiores
+      fuga harum dolore voluptates possimus minus unde, quod magni itaque?
+      Veniam corrupti reprehenderit saepe cumque deserunt, amet aspernatur
+      provident nobis dolores iste quo nihil libero ducimus, officia
+      praesentium, velit tenetur! Recusandae odit enim tenetur quaerat ipsa
+      repellat quod praesentium sequi quam doloremque in earum officia numquam
+      minus dolore quo ad, modi at architecto illo eveniet alias, vero
+      consequuntur. Quae ab eum molestiae quod sint qui architecto asperiores,
+      quidem sunt corrupti optio atque laboriosam? Molestias earum voluptatum
+      incidunt accusamus, exercitationem minus facilis nihil neque nesciunt.
+      Culpa soluta necessitatibus veniam ad eius, suscipit, accusantium delectus
+      autem aut unde cum dolor dolorem fugit laborum aliquid laboriosam tempora
+      doloribus, voluptatum hic rem asperiores sequi natus vel? Doloribus
+      facilis, sunt possimus deleniti asperiores sapiente impedit reiciendis
+      ipsa laborum non eveniet enim magni vitae quasi nulla recusandae? Veniam
+      quidem ipsam nihil beatae cum quos ducimus quaerat. Magni, optio error
+      quam perspiciatis ducimus, reiciendis debitis consequuntur maiores
+      officiis a cupiditate in voluptates neque similique quis repellat delectus
+      sit possimus.
+    </p>
+    <h2 class="top">Forms in HTML</h2>
+    Forms are used to take input from user! <br />
+    -Action attribute refers to what you want to do with the data when form is
+    submitted <br />
+    -Method: get and post: get means send data as part of url & post means send
+    data as part of the body of the document.
+    <form action="data.php" method="get">
+      <!-- could use an email too-->
+      <label for="first-name">Name</label>
+      <input
+        type="text"
+        id="first-name"
+        name="first"
+        tabindex="1"
+        autocomplete="given-name"
+        placeholder="Enter your name here"
+        maxlength="30"
+      />
+
+      <label for="email">Email</label>
+      <input
+        type="text"
+        id="email"
+        name="email"
+        tabindex="2"
+        autocomplete="email"
+        placeholder="Enter your email here"
+        maxlength="30"
+      />
+
+      <label for="date">Date</label>
+      <input type="date" id="date" name="date" tabindex="3" />
+
+      <label for="positions">Positions</label>
+      <input type="text" id="positions" tabindex="4" list="pos" />
+
+      <datalist id="pos">
+        <option value="IT Technician"></option>
+        <option value="HR Manager"></option>
+        <option value="Clerk"></option>
+        <option value="Data Entry"></option>
+      </datalist>
+
+      <label for="upload">Upload Resume</label>
+      <input
+        type="file"
+        id="upload"
+        name="upload"
+        tabindex="5"
+        accept=".doc,.docx,application/pdf"
+      />
+
+      <label>Department</label>
+      <input type="radio" id="HR" name="department" />
+      <input type="radio" id="IT" name="department" />
+
+      <input type="submit" />
+      <input type="reset" />
+    </form>
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque ipsa
+      aperiam harum a cumque minus exercitationem recusandae, dolorem odit
+      veritatis molestias quam? Culpa voluptates voluptas maiores, rem
+      voluptatem accusamus consequatur aliquid cumque, cum fugiat recusandae
+      porro earum quam exercitationem sequi illo autem voluptatum optio. Saepe
+      corporis, placeat mollitia recusandae commodi beatae sunt iste ut amet
+      earum nihil, fugit dolore repellat rem totam atque culpa exercitationem
+      molestias est blanditiis. Earum alias laboriosam deserunt pariatur, aut
+      cumque officiis? Itaque, ullam rerum? Praesentium beatae sequi maiores,
+      mollitia asperiores voluptatibus reiciendis tempore eos esse? Repellat
+      facilis distinctio expedita, aspernatur dolor ipsam similique voluptatem
+      eaque voluptas quibusdam nemo, numquam aliquid corporis. Hic impedit
+      quidem, nostrum rerum nobis, quaerat unde ea iusto perspiciatis error
+      molestiae aperiam tenetur dolore illum beatae tempora, ipsum repudiandae.
+      Dolorum soluta numquam repudiandae expedita dolorem assumenda vitae
+      obcaecati magni vero ex facere sapiente ea minus aliquam consectetur
+      optio, consequuntur cumque porro? Suscipit vitae repellendus iste placeat
+      optio, aspernatur itaque necessitatibus ipsam amet nulla sunt quos cum
+      similique accusamus nobis. Fugit, itaque. Pariatur, veritatis sunt
+      mollitia iure error quasi beatae, est nesciunt hic ipsa, ad cumque. Labore
+      iste veniam recusandae minus beatae blanditiis iure non qui voluptate
+      voluptatem! A, nihil at. Libero, iusto. Maiores animi veniam,
+      necessitatibus itaque, tenetur totam fuga esse laudantium recusandae
+      blanditiis quo.
+    </p>
+
+    <h2>Tables in HTML</h2>
+    YOU MUST NOT HAVE ANY RED COLORED words/attributes
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Alan</td>
+          <td>alan@gmail.com</td>
+        </tr>
+        <tr>
+          <td>Alan</td>
+          <td>alan@gmail.com</td>
+        </tr>
+        <tr>
+          <td>Alan</td>
+          <td>alan@gmail.com</td>
+        </tr>
+      </tbody>
+    </table>
+    <a href=""></a>
+
+    <p>
+      Vitae consequatur doloremque aliquid nemo dolorem vero placeat tempore
+      soluta ratione labore sunt explicabo corporis illum ut cum, cumque fugiat
+      laudantium eligendi quas. Eligendi, architecto officia magnam, similique
+      nulla culpa iste provident rem molestiae modi voluptatem possimus rerum?
+      Facere debitis necessitatibus quod quos consequuntur mollitia est, nisi
+      tempore ducimus consectetur optio impedit, ut reiciendis cumque eaque,
+      iure temporibus. Ut unde voluptates sint. Laborum iste eum numquam dolores
+      consectetur, vitae minima, officia ex quo tempore impedit sunt dolor natus
+      eaque at omnis, assumenda placeat. Omnis illum ea possimus exercitationem
+      modi ullam libero rerum? Repudiandae mollitia consequuntur impedit
+      voluptas ullam maiores quibusdam tempore odio voluptatibus, corporis illum
+      adipisci repellendus dignissimos quia sapiente in cum quidem ad, atque
+      earum maxime sunt. Voluptatem aspernatur neque molestiae expedita veniam
+      dolor dolorum hic autem, possimus consequuntur voluptas fuga, nam
+      reiciendis obcaecati odio voluptate beatae. Sequi amet reiciendis expedita
+      vel accusamus. Explicabo, beatae obcaecati! Deleniti quis asperiores ullam
+      eius soluta, illum molestiae voluptates quidem nulla vel aperiam officia a
+      eaque totam, quod eveniet sint iusto reiciendis obcaecati ab blanditiis.
+      Culpa ipsa quisquam vitae odit adipisci voluptas omnis quaerat asperiores
+      numquam in? Earum ullam libero necessitatibus, magni eius modi tempore in
+      explicabo iure perferendis assumenda eligendi porro deserunt nesciunt
+      tempora dolorem aut vel asperiores! Quidem pariatur eligendi enim error
+      debitis est quos commodi saepe, aliquam repellat aspernatur doloremque
+      laboriosam minus necessitatibus neque voluptates ut dolor praesentium
+      tenetur amet molestiae.
+    </p>
+  </body>
+</html>
