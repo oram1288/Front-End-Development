@@ -1,6 +1,6 @@
 // Clicked code
 let body = document.body;
-let pic = document.querySelector("#pic");
+let pic = document.querySelector(".pic");
 
 function handlePic(evt) {
   console.log("Picture clicked");
