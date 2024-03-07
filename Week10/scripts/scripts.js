@@ -69,4 +69,5 @@ window.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// Convert above functional code to the Object oriented code! Means we want to introduce the concept of "CLASSES" and objects in JavaScript!... OOP...
+// Convert above functional code to the Object oriented code!
+// Means we want to introduce the concept of "CLASSES" and objects in JavaScript!... OOP...
