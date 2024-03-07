@@ -22,7 +22,8 @@ console.log(objBook2.author);
 In object.js! we would discuss about objects in JavaScript!
 
 Prototype in JavaScript:
-    When we put something in Prootptye it becomes virtually the part of the object but physicall it does not get loaded with the object code...
+    When we put something in Prootptye it becomes virtually the part of the object but 
+    physicall it does not get loaded with the object code...
     when we need it we call it.. with the same object tha we have created by using the constructor function..
 
 
@@ -31,7 +32,8 @@ Practice for today:
 Define a constructor function "Person" that accepts two parameters "n","a";
 this constructor creates two variables name and age for the object and setsup n and a into those variables...
 
-then define a function addPerson() that accepts two paramters "n","a". this function then creates an object of "Person" constructor by passing the paramter values to it.. and pushes the newly create object in an array called "people".
+then define a function addPerson() that accepts two paramters "n","a". this function then creates an object 
+of "Person" constructor by passing the paramter values to it.. and pushes the newly create object in an array called "people".
 
 var people=[];
 
@@ -40,5 +42,5 @@ function Person(n,a){
 }
 
 function addPerson(n,a){
-this function creates teh object by calling "Person" and pushes the new constructor in "people" array.
+this function creates the object by calling "Person" and pushes the new constructor in "people" array.
 }

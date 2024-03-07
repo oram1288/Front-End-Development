@@ -155,28 +155,28 @@ let obj = {}; // empty object literal
 // it should alwasy start with a "Capital letter"
 // it constructs an object...
 
-function User(f, l, a) {
-  this.firstName = f;
-  this.lastName = l;
-  this.age = a;
-  this.loggedIn = false;
-  this.section = "A";
-  this.college = "Keyin";
-  //   this.login = function () {
-  //     this.loggedIn = true;
-  //   };
-  //   this.logout = function () {
-  //     this.loggedIn = false;
-  //   };
-}
+// function User(f, l, a) {
+//   this.firstName = f;
+//   this.lastName = l;
+//   this.age = a;
+//   this.loggedIn = false;
+//   this.section = "A";
+//   this.college = "Keyin";
+//   this.login = function () {
+//     this.loggedIn = true;
+//   };
+//   this.logout = function () {
+//     this.loggedIn = false;
+//   };
+// }
 
-User.prototype.login = function () {
-  this.loggedIn = true;
-};
+// User.prototype.login = function () {
+//   this.loggedIn = true;
+// };
 
-User.prototype.logout = function () {
-  this.loggedIn = false;
-};
+// User.prototype.logout = function () {
+//   this.loggedIn = false;
+// };
 
 // let user1 = new User("Alan", "Smith", 22);
 // let user2 = new User("Bob", "Woolmer", 22);
@@ -192,11 +192,31 @@ User.prototype.logout = function () {
 // user1.login();
 // console.log(user1);
 
-let noman = new User("Noman", "Atique", 44);
-console.log(noman);
-noman.login();
-console.log(noman);
-noman.logout();
-console.log(noman);
+// let noman = new User("Noman", "Atique", 44);
+// console.log(noman);
+// noman.login();
+// console.log(noman);
+// noman.logout();
+// console.log(noman);
 
 // PRACTICE QUESTION FROM TODAY:
+
+// Array to store people
+var people = [];
+
+function Person(n, a) {
+  this.name = n;
+  this.age = a;
+}
+
+let person1 = new Person("Alan", 22);
+
+function addPerson(n, a) {
+  people.push(Person(n, a));
+}
+
+console.log(Person.name);
+console.log(Person.age);
+
+// Access the array
+console.log(people);
