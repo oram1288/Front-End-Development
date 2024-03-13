@@ -47,14 +47,15 @@ class Book {
   }
 }
 
-// Store class will be used to stroe and retrieve teh books we have added to the local storage...
+// Store class will be used to store and retrieve the books we have added to the local storage...
 
 class Store {
   static addBook(book) {
     var books = Store.getBooks(); //read the memory if there are any books stored already
     books.push(book); //push the "book" to the books array you got in last step
 
-    localStorage.setItem("books", JSON.stringify(books)); //we need to convert our array to json to store in memroy- stringify() converts a normal array to JSON array...{"name":"ALan"}
+    localStorage.setItem("books", JSON.stringify(books)); //we need to convert our array to json to store in memroy-
+    // stringify() converts a normal array to JSON array...{"name":"ALan"}
   }
   static getBooks() {
     var books;
@@ -75,6 +76,8 @@ class Store {
   static removeBooks(remBook) {
     // read the books from memory..
     // filter the books by leaving out the book passed as paramter "remBook"
+    var books;
+    books.filter();
   }
 }
 
