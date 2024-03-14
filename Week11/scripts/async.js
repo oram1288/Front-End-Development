@@ -52,7 +52,7 @@ function loadData() {
     if (this.status === 200) {
       //   console.log(this.responseText);
       document.querySelector(
-        "output"
+        "#output"
       ).innerHTML = `<strong>${this.responseText}</strong>`;
     }
   };
