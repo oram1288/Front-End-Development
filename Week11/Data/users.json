@@ -33,12 +33,5 @@
     "email": "David@gmail.com",
     "company": "ABC Company",
     "phone": "7908633647"
-  },
-  {
-    "id": 3,
-    "name": "David Smith",
-    "email": "David@gmail.com",
-    "company": "ABC Company",
-    "phone": "7908633647"
   }
 ]

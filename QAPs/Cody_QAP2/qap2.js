@@ -4,8 +4,8 @@
  *
  * Please update the following with your information:
  *
- *      Name: <YOUR_NAME>
- *      Date: <SUBMISSION_DATE>
+ *      Name: <Cody Oram>
+ *      Date: <Tuesday, March 20th at 11:59pm>
  */
 
 /*******************************************************************************
@@ -30,8 +30,16 @@
  ******************************************************************************/
 
 function snake(value) {
-  // Replace this comment with your code...
+  // Remove leading and trailing whitespace and convert to lowercase
+  value = value.trim().toLowerCase();
+
+  // Replace internal whitespace, tabs, and dots with underscore
+  value = value.replace("[\\s.]+", "_");
+
+  return value;
 }
+
+snake("A BC");
 
 /*******************************************************************************
  * Problem 2: create an HTML <video> element for the given url.
@@ -87,8 +95,14 @@ function snake(value) {
  * ******************************************************************************/
 
 function createVideo(src, width, controls) {
-  // Replace this comment with your code...
+  return src.replace(/\s+/g, " ");
 }
+
+createVideo(
+  "http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_60fps_normal.mp4",
+  500,
+  true
+);
 
 /*******************************************************************************
  * Problem 3: extract Date from date string
