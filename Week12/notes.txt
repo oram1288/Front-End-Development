@@ -19,6 +19,7 @@ REST APIS:
     API Endpoints:
         GET     https://someurl.com/api/users .... //Get all users
         GET     https://someurl.com/api/users/1... //Get one user only with id 1
-        POST    https://someurl.com/api/users.......//Add a user
-        PUT     https://someurl.com/api/users/1...//Update user
-        DELETE  https://someurl.com/api/users/1.... Delete user....
+        POST    https://someurl.com/api/users..... //Add a user
+        PUT     https://someurl.com/api/users/1... //Update user
+        DELETE  https://someurl.com/api/users/1... //Delete user....
+
