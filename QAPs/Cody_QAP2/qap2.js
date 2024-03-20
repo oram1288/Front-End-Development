@@ -34,12 +34,14 @@ function snake(value) {
   value = value.trim().toLowerCase();
 
   // Replace internal whitespace, tabs, and dots with underscore
-  value = value.replace("[\\s.]+", "_");
+  value = value.replace(/\s+|(\.+)/g, "_");
 
   return value;
 }
 
-snake("A BC");
+console.log(snake(" A bC  "));
+console.log(snake(" A..  B   C "));
+console.log();
 
 /*******************************************************************************
  * Problem 2: create an HTML <video> element for the given url.
@@ -95,14 +97,29 @@ snake("A BC");
  * ******************************************************************************/
 
 function createVideo(src, width, controls) {
-  return src.replace(/\s+/g, " ");
+  let trimmed = src.trim();
+
+  let videoString = `<video src="${trimmed}"`;
+
+  videoString += ` width="${parseInt(width)}"`;
+
+  if (controls) {
+    videoString += ` controls`;
+  }
+
+  videoString += `></video>`;
+
+  return videoString;
 }
 
-createVideo(
-  "http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_60fps_normal.mp4",
-  500,
-  true
+console.log(
+  createVideo(
+    "http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_60fps_normal.mp4",
+    500,
+    false
+  )
 );
+console.log();
 
 /*******************************************************************************
  * Problem 3: extract Date from date string
@@ -148,8 +165,22 @@ createVideo(
  ******************************************************************************/
 
 function parseDateString(value) {
-  // Replace this comment with your code...
+  if (!(value && /^\d{4}-\d{2}-\d{2}$/.test(value))) {
+    throw new Error("Wrong Format");
+  }
+
+  let [year, month, date] = value.split("-");
+
+  let newDate = new Date();
+  newDate.setFullYear(+year);
+  newDate.setMonth(+month - 1);
+  newDate.setDate(+date);
+
+  return newDate;
 }
+
+console.log(parseDateString("2021-10-12"));
+console.log();
 
 /*******************************************************************************
  * Problem 4: convert Date to date string with specified format.
@@ -181,8 +212,20 @@ function parseDateString(value) {
  ******************************************************************************/
 
 function toDateString(value) {
-  // Replace this comment with your code...
+  try {
+    let year = value.getFullYear();
+    let month = `${value.getMonth() + 1}`.padStart(2, "0");
+    let day = `${value.getDate()}`.padStart(2, "0");
+    return `${year}-${month}-${day}`;
+  } catch (err) {
+    throw new Error("invalid date");
+  }
 }
+
+newDate = new Date(2021, 2, 23);
+console.log(toDateString(newDate));
+console.log(toDateString(parseDateString("2021-01-29")));
+console.log();
 
 /*******************************************************************************
  * Problem 5: parse a geographic coordinate
@@ -209,95 +252,193 @@ function toDateString(value) {
  ******************************************************************************/
 
 function normalizeCoord(value) {
-  // Replace this comment with your code...
+  // Regular expression to match latitude and longitude values
+  let matches = value.match(/\[?(-?\d+\.?\d+),\s*(-?\d+\.?\d+)\]?/);
+
+  let longitude;
+  let latitude;
+
+  // Check if matches were found. If it starts with a [, that means longitude is first and it switches them around.
+  if (matches) {
+    if (value.startsWith("[")) {
+      latitude = parseFloat(matches[2]);
+      longitude = parseFloat(matches[1]);
+    } else {
+      latitude = parseFloat(matches[1]);
+      longitude = parseFloat(matches[2]);
+    }
+
+    // Check if latitude and longitude values are within valid range
+    if (latitude < -90 || latitude > 90) {
+      throw new Error("invalid latitude");
+    }
+
+    if (longitude < -180 || longitude > 180) {
+      throw new Error("invalid longitude");
+    }
+
+    return `(${latitude}, ${longitude})`;
+  }
 }
 
+console.log(normalizeCoord("42.9755,-77.4369"));
+console.log(normalizeCoord("[-77.4369, 42.9755]"));
+console.log();
+
 /*******************************************************************************
-   * Problem 6: format any number of coordinates as a list in a string
-   *
-   * You are asked to format geographic lat, lng coordinates in a list using your
-   * normalizeCoord() function from problem 5.
-   *
-   * Where normalizeCoord() takes a single geographic coord, the formatCoords()
-   * function takes a list of any number of geographic coordinates, parses them,
-   * filters out any invalid coords, and creates a list.
-   *
-   * For example: given the following coords, "42.9755,-77.4369" and "[-62.1234, 42.9755]",
-   * a new list would be created of the following form "((42.9755, -77.4369), (42.9755, -62.1234))".
-   *
-   * Notice how the list has been enclosed in an extra set of (...) braces, and each
-   * formatted geographic coordinate is separated by a comma and space.
-   *
-   * The formatCoords() function can take any number of arguments, but they must all
-   * be strings.  If any of the values can't be parsed by normalizeCoord() (i.e., if
-   * an Error is thrown), skip the value.  For example:
-   *
-   * formatCoords("42.9755,-77.4369", "[-62.1234, 42.9755]", "300,-9000") should return
-   * "((42.9755, -77.4369), (42.9755, -62.1234))" and skip the invalid coordinate.
-   *
-  
-   ******************************************************************************/
+  * Problem 6: format any number of coordinates as a list in a string
+  *
+  * You are asked to format geographic lat, lng coordinates in a list using your
+  * normalizeCoord() function from problem 5.
+  *
+  * Where normalizeCoord() takes a single geographic coord, the formatCoords()
+  * function takes a list of any number of geographic coordinates, parses them,
+  * filters out any invalid coords, and creates a list.
+  *
+  * For example: given the following coords, "42.9755,-77.4369" and "[-62.1234, 42.9755]",
+  * a new list would be created of the following form "((42.9755, -77.4369), (42.9755, -62.1234))".
+  *
+  * Notice how the list has been enclosed in an extra set of (...) braces, and each
+  * formatted geographic coordinate is separated by a comma and space.
+  *
+  * The formatCoords() function can take any number of arguments, but they must all
+  * be strings.  If any of the values can't be parsed by normalizeCoord() (i.e., if
+  * an Error is thrown), skip the value.  For example:
+  *
+  * formatCoords("42.9755,-77.4369", "[-62.1234, 42.9755]", "300,-9000") should return
+  * "((42.9755, -77.4369), (42.9755, -62.1234))" and skip the invalid coordinate.
+  *
+    
+  *****************************************************************************/
 
 function formatCoords(...values) {
-  // Replace this comment with your code...
+  let string = "(";
+  for (let i = 0; i < values.length; i++) {
+    try {
+      string += normalizeCoord(values[i]) + ", ";
+    } catch (err) {}
+  }
+  if (string.endsWith(", ")) {
+    string = string.slice(0, string.length - 2);
+  }
+  return string + ")";
 }
+
+console.log(
+  formatCoords("42.9755,-77.4369", "[-62.1234, 42.9755]", "300,-9000")
+);
+console.log();
 
 /*******************************************************************************
-   * Problem 7: determine MIME type from filename extension
-   *
-   * Web browsers and servers exchange streams of bytes, which must be interpreted
-   * by the receiver based on their type.  For example, an HTML web page is
-   * plain text, while a JPG image is a binary sequence.
-   *
-   * The Content-Type header contains information about a resource's MIME type, see:
-   * https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type
-   *
-   * The MIME type is made-up of a `type` and a `subtype` separated by a `/` character.
-   * The type is general, for example, 'text' or 'video'.  The subtype is more
-   * specific, indicating the specific type of text, image, video, etc.  See:
-   * https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types
-   *
-   * A number of common types are used in web development:
-   *
-   * mimeFromFilename('/User/Documents/readme.txt') --> returns 'text/plain'
-   *
-   * Your mimeFromFilename() function should support all of the following extensions
-   * with and without the leading '.':
-   *
-   * - .html, .htm --> text/html
-   * - .css --> text/css
-   * - .js --> text/javascript
-   * - .jpg, .jpeg --> image/jpeg
-   * - .gif --> image/gif
-   * - .bmp --> image/bmp
-   * - .ico, .cur --> image/x-icon
-   * - .png --> image/png
-   * - .svg --> image/svg+xml
-   * - .webp --> image/webp
-   * - .mp3 --> audio/mp3
-   * - .wav --> audio/wav
-   * - .mp4 --> video/mp4
-   * - .webm --> video/webm
-   * - .json --> application/json
-   * - .mpeg --> video/mpeg
-   * - .csv --> text/csv
-   * - .ttf --> font/ttf
-   * - .woff --> font/woff
-   * - .zip --> application/zip
-   * - .avi --> video/x-msvideo
-   *
-   *
-   * NOTE: any other extension should use the `application/octet-stream` MIME type,
-   * to indicate that it is an unknown stream of bytes (e.g., binary file). You should
-   * also use `application/octet-stream` if the file has no extension.
-   *
-  
-   ******************************************************************************/
+     * Problem 7: determine MIME type from filename extension
+     *
+     * Web browsers and servers exchange streams of bytes, which must be interpreted
+     * by the receiver based on their type.  For example, an HTML web page is
+     * plain text, while a JPG image is a binary sequence.
+     *
+     * The Content-Type header contains information about a resource's MIME type, see:
+     * https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type
+     *
+     * The MIME type is made-up of a `type` and a `subtype` separated by a `/` character.
+     * The type is general, for example, 'text' or 'video'.  The subtype is more
+     * specific, indicating the specific type of text, image, video, etc.  See:
+     * https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types
+     *
+     * A number of common types are used in web development:
+     *
+     * mimeFromFilename('/User/Documents/readme.txt') --> returns 'text/plain'
+     *
+     * Your mimeFromFilename() function should support all of the following extensions
+     * with and without the leading '.':
+     *
+     * - .html, .htm --> text/html
+     * - .css --> text/css
+     * - .js --> text/javascript
+     * - .jpg, .jpeg --> image/jpeg
+     * - .gif --> image/gif
+     * - .bmp --> image/bmp
+     * - .ico, .cur --> image/x-icon
+     * - .png --> image/png
+     * - .svg --> image/svg+xml
+     * - .webp --> image/webp
+     * - .mp3 --> audio/mp3
+     * - .wav --> audio/wav
+     * - .mp4 --> video/mp4
+     * - .webm --> video/webm
+     * - .json --> application/json
+     * - .mpeg --> video/mpeg
+     * - .csv --> text/csv
+     * - .ttf --> font/ttf
+     * - .woff --> font/woff
+     * - .zip --> application/zip
+     * - .avi --> video/x-msvideo
+     *
+     *
+     * NOTE: any other extension should use the `application/octet-stream` MIME type,
+     * to indicate that it is an unknown stream of bytes (e.g., binary file). You should
+     * also use `application/octet-stream` if the file has no extension.
+     *
+    
+     ******************************************************************************/
 
 function mimeFromFilename(filename) {
-  // Replace this comment with your code...
-  // NOTE: Use a switch statement in your solution.
+  let ext = filename.slice(filename.lastIndexOf("."));
+
+  switch (ext.replace(/^\./, "")) {
+    case "html":
+    case "htm":
+      return "text/html";
+    case "css":
+      return "text/css";
+    case "js":
+      return "text/javascript";
+    case "jpg":
+    case "jpeg":
+      return "image/jpeg";
+    case "gif":
+      return "image/gif";
+    case "bmp":
+      return "image/bmp";
+    case "ico":
+    case "cur":
+      return "image/x-icon";
+    case "png":
+      return "image/png";
+    case "svg":
+      return "image/svg+xml";
+    case "webp":
+      return "image/webp";
+    case "mp3":
+      return "audio/mp3";
+    case "wav":
+      return "audio/wav";
+    case "mp4":
+      return "video/mp4";
+    case "webm":
+      return "video/webm";
+    case "json":
+      return "application/json";
+    case "mpeg":
+      return "video/mpeg";
+    case "csv":
+      return "text/csv";
+    case "ttf":
+      return "font/ttf";
+    case "woff":
+      return "font/woff";
+    case "zip":
+      return "application/zip";
+    case "avi":
+      return "video/x-msvideo";
+    default:
+      return "application/octet-stream";
+  }
 }
+
+console.log(mimeFromFilename("/User/Documents/readme.avi"));
+console.log(mimeFromFilename("/User/Documents/readme.css"));
+console.log(mimeFromFilename("/User/Documents/readme.jpg"));
+console.log();
 
 /*******************************************************************************
  * Problem 8, Part 1: generate license text and link from license code.
@@ -346,9 +487,38 @@ function mimeFromFilename(filename) {
  ******************************************************************************/
 
 function generateLicenseLink(licenseCode, targetBlank) {
-  // Replace this comment with your code...
+  let startUrl = (licenseText) =>
+    `<a href="https://creativecommons.org/licenses/${licenseCode
+      .replace("CC-", "")
+      .toLowerCase()}/4.0/${
+      targetBlank ? ' target="_blank"' : ""
+    }>${licenseText}</a>`;
+
+  if (licenseCode === "CC-BY") {
+    return startUrl("Creative Commons Attribution License");
+  } else if (licenseCode === "CC-BY-NC") {
+    return startUrl("Creative Commons Attribution NonCommercial License");
+  } else if (licenseCode === "CC-BY-SA") {
+    return startUrl("Creative Commons Attribution ShareAlike License");
+  } else if (licenseCode === "CC-BY-ND") {
+    return startUrl("Creative Commons Attribution NoDerivs License");
+  } else if (licenseCode === "CC-BY-NC-SA") {
+    return startUrl(
+      "Creative Commons Attribution NonCommercial ShareAlike License"
+    );
+  } else if (licenseCode === "CC-BY-NC-ND") {
+    return startUrl(
+      "Creative Commons Attribution NonCommercial NoDerivs License"
+    );
+  }
+
+  return `<a href="https://choosealicense.com/no-permission/">All Rights Reserved</a>`;
 }
 
+// Test cases
+console.log(generateLicenseLink("CC-BY-NC")); // Creative Commons Attribution NonCommercial License
+console.log(generateLicenseLink("CC-BY"));
+console.log();
 /*******************************************************************************
  * Problem 9 Part 1: convert a value to a Boolean (true or false)
  *
@@ -372,8 +542,41 @@ function generateLicenseLink(licenseCode, targetBlank) {
  ******************************************************************************/
 
 function pureBool(value) {
-  // Replace this comment with your code...
+  // If the value is already a Boolean, return it
+  if (typeof value === "boolean") {
+    return value;
+  }
+
+  // Convert strings to lowercase for case-insensitive comparison
+  let stringValue = String(value);
+
+  // Define arrays of true and false type values
+  let trueValues = ["YES", "oui", "o", "T", "true", "vrai", "v", "1"];
+  let falseValues = ["no", "non", "N", "f", "false", "FAUX", "-2"];
+
+  // Check if the value is in the trueValues array
+  if (trueValues.includes(stringValue)) {
+    return true;
+  }
+  // Check if the value is in the falseValues array
+  else if (falseValues.includes(stringValue)) {
+    return false;
+  }
+  // Throw an error for invalid values
+  else {
+    throw new Error("Invalid Value.");
+  }
 }
+
+console.log(pureBool(true)); // true
+console.log(pureBool(false)); // false
+console.log(pureBool("YES")); // true
+console.log(pureBool("N")); // false
+console.log(pureBool("vrai")); // true
+console.log(pureBool(1)); // true
+console.log(pureBool(-2)); // false
+// console.log(pureBool("invalid")); // throws error
+console.log();
 
 /*******************************************************************************
  * Problem 9 Part 2: checking for all True or all False values in a normalized list
@@ -389,17 +592,49 @@ function pureBool(value) {
  * throws on invalid data.
  ******************************************************************************/
 
-function every() {
-  // Replace this comment with your code...
+function every(...lists) {
+  try {
+    for (let list of lists) {
+      if (!pureBool(list)) {
+        return false;
+      }
+    }
+    return false;
+  } catch (error) {
+    return true;
+  }
 }
 
-function any() {
-  // Replace this comment with your code...
+function any(...lists) {
+  try {
+    for (let list of lists) {
+      if (pureBool(list)) {
+        return false;
+      }
+    }
+    return false;
+  } catch (error) {
+    return true;
+  }
 }
 
-function none() {
-  // Replace this comment with your code...
+function none(...lists) {
+  try {
+    for (let list of lists) {
+      if (pureBool(list)) {
+        return false;
+      }
+    }
+    return true;
+  } catch (error) {
+    return false;
+  }
 }
+
+console.log(every("Y", "yes", 1)); // T
+console.log(any("Y", "no", 1)); // T
+console.log(none("Y", "invalid", 1)); // F
+console.log();
 
 /*******************************************************************************
  * Problem 10 - build a URL
@@ -453,6 +688,43 @@ function none() {
  ******************************************************************************/
 
 function buildUrl(query, order, count, license) {
-  // Replace this comment with your code...
   //returns the properly formatted iNaturlist URL
+  // Validate count parameter
+  if (count < 1 || count > 50) {
+    throw new Error("Count must be between 1 and 50");
+  }
+
+  // Validate order parameter
+  if (order !== "ascending" && order !== "descending") {
+    throw new Error('Invalid order value. Must be "ascending" or "descending"');
+  }
+
+  // Validate license parameter
+  let validLicenses = [
+    "none",
+    "any",
+    "cc-by",
+    "cc-by-nc",
+    "cc-by-sa",
+    "cc-by-nd",
+    "cc-by-nc-sa",
+    "cc-by-nc-nd",
+  ];
+  if (!validLicenses.includes(license)) {
+    throw new Error("Invalid license value");
+  }
+
+  // Build the URL
+  let baseUrl = "https://api.inaturalist.org/v2/observations";
+  let queryParams = [];
+  if (query) queryParams.push(`query=${encodeURIComponent(query)}`);
+  if (count) queryParams.push(`count=${count}`);
+  if (order) queryParams.push(`order=${order}`);
+  if (license) queryParams.push(`license=${license}`);
+  let queryString = queryParams.join("&");
+  let url = `${baseUrl}?${queryString}`;
+  return url;
 }
+
+console.log(buildUrl("butterfly'", "ascending", 20, "cc-by")); // Sample URL
+console.log();
