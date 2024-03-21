@@ -28,6 +28,40 @@ function loadData() {
     });
 }
 
+// Get user & Get users for practice -
+
+document.querySelector("#btn2").addEventListener("click", getUser);
+
+function getUser() {
+  fetch("./data/user.json")
+    .then((res) => {
+      return res.json();
+    })
+    .then((user) => {
+      let output = "";
+
+      output += `<ul class="list"><li>ID: ${user.id}</li><li>Name: ${user.name}</li><li>Email: ${user.email}</li><li>Company: ${user.company}</li><li>Phone: ${user.phone}</li><ul>`;
+
+      document.querySelector("#output").innerHTML = output;
+    });
+}
+
+document.querySelector("#btn3").addEventListener("click", getUsers);
+
+function getUsers() {
+  fetch("./data/users.json")
+    .then((res) => {
+      return res.json();
+    })
+    .then((users) => {
+      let output = "";
+      users.forEach((user) => {
+        output += `<ul class="list"><li>ID: ${user.id}</li><li>Name: ${user.name}</li><li>Email: ${user.email}</li><li>Company: ${user.company}</li><li>Phone: ${user.phone}</li><ul>`;
+      });
+      document.querySelector("#output").innerHTML = output;
+    });
+}
+
 document.querySelector("#btn4").addEventListener("click", loadAPI);
 
 function loadAPI() {
