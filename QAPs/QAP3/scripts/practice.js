@@ -24,34 +24,32 @@ function displayObj() {
 }
 
 /***Question 2***/
+document.querySelector("#btnq2").addEventListener("click", showJSON);
+
 function showJSON() {
+  // 1. Create an XHR object
+
   const xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState === XMLHttpRequest.DONE) {
-      if (xhr.status === 200) {
-        const jsonData = JSON.parse(xhr.responseText);
-        displayJSON(jsonData);
-      } else {
-        console.error("Failed to fetch JSON data");
-      }
+
+  // 2. Configure the request...
+
+  xhr.open("GET", "./data/user.json");
+
+  // 3. Action on recieving the data
+
+  xhr.onload = function () {
+    if (this.status === 200) {
+      const user = JSON.parse(this.responseText);
+      //   console.log(user.email);
+      const output = `<ul><li>Name:${user.name}</li><li>Company:${user.company}</li>`;
+
+      document.querySelector("#output").innerHTML = output;
     }
   };
-  xhr.open("GET", "data/users.json", true);
-  xhr.send();
-}
 
-function displayJSON(data) {
-  const jsonOutput = document.getElementById("jsonOutput");
-  jsonOutput.innerHTML = "";
-  for (const key in data) {
-    if (Object.hasOwnProperty.call(data, key)) {
-      const value = data[key];
-      const listItem = document.createElement("li");
-      listItem.innerHTML = `<strong>${key}:</strong> ${value}`;
-      jsonOutput.appendChild(listItem);
-    }
-  }
-  document.getElementById("answer").style.display = "block";
+  // 4. Execute the request
+
+  xhr.send();
 }
 
 /*** Question 3***/
