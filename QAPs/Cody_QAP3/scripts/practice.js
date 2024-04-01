@@ -20,7 +20,7 @@ function displayObj() {
   users.forEach((user) => {
     output += `<p>Name: ${user.name}, Age: ${user.age}</p>`;
   });
-  document.getElementById("#output").innerHTML = output;
+  document.getElementById("#q1").innerHTML = output;
 }
 
 /***Question 2***/
@@ -41,9 +41,9 @@ function showJSON() {
     if (this.status === 200) {
       const user = JSON.parse(this.responseText);
       //   console.log(user.email);
-      const output = `<ul><li>Name:${user.name}</li><li>Company:${user.company}</li>`;
+      const output = `<ul><li>Name: ${user.name}</li><li>Company: ${user.company}</li>`;
 
-      document.querySelector("#output").innerHTML = output;
+      document.querySelector("#q2").innerHTML = output;
     }
   };
 
@@ -63,10 +63,10 @@ function loadAPI() {
     .then((data) => {
       let output = "";
       data.forEach((user) => {
-        output += `<p id="q3"> <h3> ID: ${user.id}</h3><br/>
-        <h3> Title: ${user.title}</h3> <br>
-        <h3> Completed: ${user.completed}</h3>  </p>`;
+        output += `<p id="q3"> <h3> ID: ${user.id}</h3>
+        <h3> Title: ${user.title}</h3>
+        <h3> Completed: ${user.completed}</h3><br />  </p>`;
       });
-      document.querySelector("#output").innerHTML = output;
+      document.querySelector("#q3").innerHTML = output;
     });
 }
