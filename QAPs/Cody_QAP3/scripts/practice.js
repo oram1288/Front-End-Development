@@ -43,7 +43,7 @@ function showJSON() {
       //   console.log(user.email);
       const output = `<ul><li>Name:${user.name}</li><li>Company:${user.company}</li>`;
 
-      document.querySelector("#output").innerHTML = output;
+      document.querySelector("#q2").innerHTML = output;
     }
   };
 
