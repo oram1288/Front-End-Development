@@ -15,12 +15,14 @@ function makeObj() {
   users.push(user);
 }
 
+document.querySelector("#btnq1").addEventListener("click", showJSON);
+
 function displayObj() {
-  let output = "<h3>User List:</h3>";
+  let output = "";
   users.forEach((user) => {
     output += `<p>Name: ${user.name}, Age: ${user.age}</p>`;
   });
-  document.getElementById("#q1").innerHTML = output;
+  document.querySelector("#q1").innerHTML = output;
 }
 
 /***Question 2***/
@@ -60,6 +62,7 @@ function loadAPI() {
     .then((res) => {
       return res.json();
     })
+
     .then((data) => {
       let output = "";
       data.forEach((user) => {
