@@ -13,14 +13,18 @@ function makeObj() {
   const age = document.getElementById("age").value;
   const user = new User(name, age);
   users.push(user);
+  clearFields();
 }
 
-document.querySelector("#btnq1").addEventListener("click", showJSON);
+function clearFields() {
+  document.getElementById("name").value = "";
+  document.getElementById("age").value = "";
+}
 
 function displayObj() {
   let output = "";
   users.forEach((user) => {
-    output += `<p>Name: ${user.name}, Age: ${user.age}</p>`;
+    output += `<p>Name: ${user.name} Age: ${user.age}</p>`;
   });
   document.querySelector("#q1").innerHTML = output;
 }
