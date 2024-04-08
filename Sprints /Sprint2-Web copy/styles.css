@@ -225,10 +225,6 @@ a.class3 {
   background-color: white;
 }
 
-.project h3 {
-  margin-top: 0;
-}
-
 .line {
   width: 700px;
   height: 2px;
@@ -236,12 +232,109 @@ a.class3 {
   margin: 0px 130px;
 }
 
+.line2 {
+  width: 900px;
+  height: 2px;
+  background-color: rgba(224, 224, 224, 1);
+  margin-top: 40px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+/* footer section/socials */
+.footer {
+  width: 1000px;
+  height: 90px;
+  margin-top: 1000px;
+  padding-top: 40px;
+  /* background-color: aquamarine; */
+  text-align: center;
+}
+
+.footer2 {
+  width: 1000px;
+  height: 90px;
+  padding-top: 15px;
+  /* background-color: aquamarine; */
+  text-align: center;
+}
+
+/* font awesome icons */
+.fa {
+  padding: 8px;
+  font-size: 50px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* facebook */
+.fa-facebook {
+  width: 5px;
+  height: 5px;
+  margin-right: 5px;
+  align-content: center;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+}
+
+/* twitter */
+.fa-twitter {
+  width: 5px;
+  height: 5px;
+  color: black;
+}
+
+/* instagram */
+.fa-instagram {
+  width: 10px;
+  height: 10px;
+  color: black;
+}
+
+/* Twitter */
+.fa-instagram {
+  width: 10px;
+  height: 10px;
+  color: black;
+}
+
+/* linkedin */
+.fa-linkedin {
+  width: 3px;
+  height: 5px;
+  margin-left: 15px;
+  padding-right: 15px;
+  align-content: center;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+}
+
+.p-footer {
+  font-size: small;
+}
+
+/* about me/contact */
 .about-me {
   font-weight: bold;
 }
 
-footer {
-  background-color: white;
-  padding: 20px;
-  text-align: center;
+.line3 {
+  width: 900px;
+  height: 2px;
+  background-color: rgba(224, 224, 224, 1);
+  margin-top: 25px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 15px;
+}
+
+.contact-p {
+  font-size: 20px;
 }
