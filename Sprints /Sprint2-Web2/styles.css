@@ -205,7 +205,7 @@ a.class3 {
 
 .website {
   height: 20px;
-  width: 60px;
+  width: 80px;
   margin-left: 15px;
   align-content: center;
   float: left;
@@ -213,11 +213,10 @@ a.class3 {
 
 .see-more {
   height: 20px;
-  width: 60px;
-  margin-left: 30px;
+  width: 90px;
+  margin-left: 116px;
   align-content: center;
   float: left;
-  background-color: aquamarine;
 }
 
 .year-color {
@@ -226,6 +225,10 @@ a.class3 {
 
 .website-color {
   color: rgb(178, 177, 177);
+}
+
+.see-more-color {
+  color: black;
 }
 
 /* work section */
