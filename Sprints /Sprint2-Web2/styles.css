@@ -211,6 +211,15 @@ a.class3 {
   float: left;
 }
 
+.see-more {
+  height: 20px;
+  width: 60px;
+  margin-left: 30px;
+  align-content: center;
+  float: left;
+  background-color: aquamarine;
+}
+
 .year-color {
   color: white;
 }
