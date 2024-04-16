@@ -24,7 +24,8 @@ function clearFields() {
 function displayObj() {
   let output = "";
   users.forEach((user) => {
-    output += `<p>Name: ${user.name} Age: ${user.age}</p>`;
+    output += `<p>Name: ${user.name} <br/>
+    Age: ${user.age}</p>`;
   });
   document.querySelector("#q1").innerHTML = output;
 }
