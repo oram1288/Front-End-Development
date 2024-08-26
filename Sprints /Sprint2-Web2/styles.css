@@ -164,18 +164,17 @@ a.class3 {
 
 .project {
   background-color: white;
-  /* padding: 20px; */
   margin: 20px 105px;
   border-radius: 25px;
   width: 750px;
-  height: 170px;
+  height: 230px;
   border: 1px solid black;
   align-content: center;
 }
 
 .project-pic {
   width: 240px;
-  height: 130px;
+  height: 140px;
   margin: 30px 40px;
   /* background-color: aquamarine; */
   align-content: center;
@@ -186,16 +185,16 @@ a.class3 {
   width: 380px;
   height: 150px;
   margin: 10px 5px;
-  padding-top: 15px;
+  padding-top: 2px;
   /* background-color: aquamarine; */
   align-content: center;
   float: left;
 }
 
 .year {
-  height: 20px;
+  height: 30px;
   width: 50px;
-  padding-left: 10px;
+  padding-left: 12px;
   border-radius: 10px;
   font-weight: bold;
   background-color: rgba(20, 40, 80, 1);
@@ -206,7 +205,7 @@ a.class3 {
 .website {
   height: 20px;
   width: 80px;
-  margin-left: 15px;
+  margin: 5px 15px;
   align-content: center;
   float: left;
 }
@@ -214,21 +213,27 @@ a.class3 {
 .see-more {
   height: 20px;
   width: 90px;
-  margin-left: 116px;
+  margin-left: 110px;
   align-content: center;
   float: left;
 }
 
 .year-color {
   color: white;
+  margin: 0px;
 }
 
 .website-color {
   color: rgb(178, 177, 177);
+  margin: 0px;
 }
 
 .see-more-color {
   color: black;
+}
+
+p.project-p {
+  padding-top: 10px;
 }
 
 /* work section */
@@ -258,7 +263,7 @@ a.class3 {
   width: 1000px;
   height: 90px;
   margin-top: 1000px;
-  padding-top: 40px;
+  padding-top: 220px;
   /* background-color: aquamarine; */
   text-align: center;
 }
@@ -286,8 +291,8 @@ a.class3 {
 
 /* facebook */
 .fa-facebook {
-  width: 5px;
-  height: 5px;
+  width: 10px;
+  height: 8px;
   margin-right: 5px;
   align-content: center;
   background-color: black;
@@ -297,31 +302,23 @@ a.class3 {
 
 /* twitter */
 .fa-twitter {
-  width: 5px;
-  height: 5px;
+  width: 10px;
+  height: 10px;
   color: black;
 }
 
 /* instagram */
 .fa-instagram {
-  width: 10px;
-  height: 10px;
-  color: black;
-}
-
-/* Twitter */
-.fa-instagram {
-  width: 10px;
-  height: 10px;
+  width: 20px;
+  height: 20px;
   color: black;
 }
 
 /* linkedin */
 .fa-linkedin {
-  width: 3px;
-  height: 5px;
+  width: 10px;
+  height: 8px;
   margin-left: 15px;
-  padding-right: 15px;
   align-content: center;
   background-color: black;
   color: white;
